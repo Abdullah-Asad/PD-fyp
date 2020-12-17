@@ -88,14 +88,4 @@ model.compile(loss="sparse_categorical_crossentropy", optimizer="adam", metrics=
 y = np.array(y)
 history = model.fit(X, y, batch_size=32, epochs=40, validation_split=0.1)
 
-model.save('CNN.model')
-
-print(history.history.keys())
-plt.figure(1)
-plt.plot(history.history['accuracy'])
-plt.plot(history.history['val_accuracy'])
-plt.title('model accuracy')
-plt.ylabel('accuracy')
-plt.xlabel('epoch')
-plt.legend(['train', 'validation'], loc='upper left')
-plt.show()
+model.save("CNN.h5")
