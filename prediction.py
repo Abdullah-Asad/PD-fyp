@@ -49,5 +49,5 @@ def home_endpoint():
 
 
 if __name__ == '__main__':
-    load_model()  #
+    load_model()  
     app.run(debug=True)
