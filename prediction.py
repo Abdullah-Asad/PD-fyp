@@ -31,9 +31,9 @@ def get_prediction():
     # Works only for a single sample
     if request.method == 'POST':
         print("1")
-        # user_image = request.files["file"]
-        # image = cv2.imdecode(np.frombuffer(user_image.read(), np.uint8), cv2.IMREAD_GRAYSCALE)
-        image = cv2.imread('image.png', 0)
+        user_image = request.files["file"]
+        image = cv2.imdecode(np.frombuffer(user_image.read(), np.uint8), cv2.IMREAD_GRAYSCALE)
+#         image = cv2.imread('image.png', 0) //for testing only 
         preparedImage = prepare(image)
 
         prediction = model.predict([preparedImage])
